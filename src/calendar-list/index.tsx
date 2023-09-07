@@ -3,7 +3,8 @@ import PropTypes from 'prop-types';
 import XDate from 'xdate';
 
 import React, {forwardRef, useImperativeHandle, useRef, useEffect, useState, useCallback, useMemo} from 'react';
-import {FlatList, View, ViewStyle, FlatListProps} from 'react-native';
+import {View, ViewStyle, FlatListProps} from 'react-native';
+import {FlatList} from 'react-native-gesture-handler';
 
 import {extractHeaderProps, extractCalendarProps} from '../componentUpdater';
 import {xdateToData, parseDate, toMarkingFormat} from '../interface';
@@ -286,7 +287,7 @@ const CalendarList = (props: CalendarListProps & ContextProp, ref: any) => {
       onViewableItemsChanged
     },
   ]);
- 
+
   return (
     <View style={style.current.flatListContainer} testID={testID}>
       <FlatList
